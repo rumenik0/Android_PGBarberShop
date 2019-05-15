@@ -1,4 +1,4 @@
-package com.example.pgbarbershop;
+package com.example.pgbarbershop.fragments;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.pgbarbershop.R;
 import com.example.pgbarbershop.adpters.AdapterCursosPersonalizado;
 import com.example.pgbarbershop.database.ServicosDB;
 import com.example.pgbarbershop.model.Filial;

@@ -1,4 +1,4 @@
-package com.example.pgbarbershop;
+package com.example.pgbarbershop.fragments;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.pgbarbershop.R;
 
 public class Home extends Fragment implements View.OnClickListener {
     private Activity activity;

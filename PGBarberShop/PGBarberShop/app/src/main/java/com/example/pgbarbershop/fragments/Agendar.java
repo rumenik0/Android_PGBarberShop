@@ -1,4 +1,4 @@
-package com.example.pgbarbershop;
+package com.example.pgbarbershop.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.pgbarbershop.R;
 import com.example.pgbarbershop.adpters.AdapterFilial;
 import com.example.pgbarbershop.model.Filial;
 import com.google.firebase.database.ChildEventListener;
