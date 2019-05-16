@@ -8,17 +8,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.pgbarbershop.R;
-import com.example.pgbarbershop.model.Servicos;
+import com.example.pgbarbershop.model.ServicosModel;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class AdapterCursosPersonalizado extends BaseAdapter {
 
-    private final List<Servicos> cursos;
+    private final List<ServicosModel> cursos;
     private final Activity act;
 
-    public AdapterCursosPersonalizado(List<Servicos> cursos, Activity act) {
+    public AdapterCursosPersonalizado(List<ServicosModel> cursos, Activity act) {
         this.cursos = cursos;
         this.act = act;
     }
@@ -46,7 +46,7 @@ public class AdapterCursosPersonalizado extends BaseAdapter {
         TextView descricao = (TextView)view.findViewById(R.id.descricao);
         ImageView imagem = (ImageView)view.findViewById(R.id.imagem);
 
-        Servicos curso = cursos.get(position);
+        ServicosModel curso = cursos.get(position);
         nome.setText(curso.getNome());
         descricao.setText(curso.getDescricao());
         Picasso.get().load(curso.getUrlImage()).into(imagem);

@@ -1,18 +1,18 @@
 package com.example.pgbarbershop.model;
 
-public class Servicos {
+public class ServicosModel {
     private String nome;
     private String descricao;
     private int duracao;
     private String urlImage;
 
-    public Servicos(String nome, String descricao, int duracao, String urlImage) {
+    public ServicosModel(String nome, String descricao, int duracao, String urlImage) {
         this.nome = nome;
         this.descricao = descricao;
         this.duracao = duracao;
         this.urlImage = urlImage;
     }
-    public Servicos() {}
+    public ServicosModel() {}
 
     public String getNome() {
         return nome;

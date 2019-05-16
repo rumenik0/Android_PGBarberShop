@@ -25,9 +25,7 @@ import android.widget.Toast;
 import com.example.pgbarbershop.R;
 import com.example.pgbarbershop.adpters.AdapterCursosPersonalizado;
 import com.example.pgbarbershop.database.ServicosDB;
-import com.example.pgbarbershop.model.Filial;
-import com.example.pgbarbershop.model.ProfissionaisModel;
-import com.example.pgbarbershop.model.Servicos;
+import com.example.pgbarbershop.model.ServicosModel;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,15 +33,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class Sevicos extends Fragment {
+public class Servicos extends Fragment {
     ListView listserv;
     ArrayAdapter<String> adapter;
     DatabaseReference db;
     ServicosDB helper;
-    List<Servicos> lista = new ArrayList<>();
+    List<ServicosModel> lista = new ArrayList<>();
 
     public void Sevicos(){}
     @TargetApi(Build.VERSION_CODES.M)
@@ -55,24 +52,12 @@ public class Sevicos extends Fragment {
 
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         DatabaseReference ref = db.getReference().child("servicos");
-        DatabaseReference refFilial = db.getReference().child("filial");
-        DatabaseReference refProf = db.getReference().child("profissional");
-
-        Filial f = new Filial();
-        f.setNome("Jordão");
-
-        ProfissionaisModel p = new ProfissionaisModel();
-        p.setNome("Xuxu");
-        p.setFilial(f);
-
-        refProf.push().setValue(p);
-
 
         ChildEventListener child;
         child = new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                Servicos servicos = dataSnapshot.getValue(Servicos.class);
+                ServicosModel servicos = dataSnapshot.getValue(ServicosModel.class);
                 lista.add(servicos);
                 AdapterCursosPersonalizado adapter = new AdapterCursosPersonalizado(lista, getActivity());
                 listserv.setAdapter(adapter);
